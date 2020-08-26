@@ -34,8 +34,6 @@ public class Ui {
                     break;
             }
         } while (reRun());
-
-        return;
     }
 
     // Method that outputs the UI of the factorial calculation
@@ -83,9 +81,6 @@ public class Ui {
         System.out.println("Do you want to re-run the program? (Y/n)");
         Scanner scanner = new Scanner(System.in);
         String response = scanner.nextLine();
-        if (response.equals("n"))
-            return false;
-        else
-            return true;
+        return !response.equals("n");
     }
 }
