@@ -1,7 +1,6 @@
-package simple.algorithms;
+package simple.algorithms.services;
 
 public class CalculateFactorial {
-    private int inputNumber;
 
     public CalculateFactorial() {
     }

@@ -1,4 +1,4 @@
-package simple.algorithms;
+package simple.algorithms.services;
 
 public class CalculateLongNumber {
 }

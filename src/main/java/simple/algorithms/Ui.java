@@ -1,5 +1,8 @@
 package simple.algorithms;
 
+import simple.algorithms.services.CalculateFactorial;
+import simple.algorithms.services.CalculateHarmonicNumber;
+
 import java.util.Scanner;
 
 public class Ui {
@@ -35,7 +38,7 @@ public class Ui {
     }
 
     // Method that outputs the UI of the factorial calculation
-    private void factorial () {
+    private void factorial() {
         CalculateFactorial calculateFactorial = new CalculateFactorial();
         Scanner scanner = new Scanner(System.in);
 
@@ -49,15 +52,23 @@ public class Ui {
         }
     }
 
-    private void harmonicCalculation () {
-        System.out.println("I'm here");
+    private void harmonicCalculation() {
+        CalculateHarmonicNumber calculateHarmonicNumber = new CalculateHarmonicNumber();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please choose the number that you want calculated");
+        int chooseNumber = Integer.parseInt(scanner.nextLine());
+        if (chooseNumber > 0)
+            System.out.println("The harmonic number of " + chooseNumber + " is " + calculateHarmonicNumber.calculation(chooseNumber));
+        else
+            System.out.println("Your entry is invalid.");
     }
 
-    private void countLongNumber () {
+    private void countLongNumber() {
         System.out.println("I came here as well");
     }
 
-    private void calculateDecimalPart () {
+    private void calculateDecimalPart() {
         System.out.println("Ola gucci");
     }
 

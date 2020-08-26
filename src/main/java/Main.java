@@ -1,7 +1,4 @@
-import simple.algorithms.CalculateFactorial;
 import simple.algorithms.Ui;
-
-import java.util.Scanner;
 
 public class Main {
 
