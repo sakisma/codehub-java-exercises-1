@@ -2,6 +2,7 @@ package simple.algorithms;
 
 import simple.algorithms.services.CalculateFactorial;
 import simple.algorithms.services.CalculateHarmonicNumber;
+import simple.algorithms.services.CountLongNumber;
 
 import java.util.Scanner;
 
@@ -65,7 +66,12 @@ public class Ui {
     }
 
     private void countLongNumber() {
-        System.out.println("I came here as well");
+        CountLongNumber countLongNumber = new CountLongNumber();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please insert a long number.");
+        long chooseNumber = Long.parseLong(scanner.nextLine());
+        System.out.println("The number " + chooseNumber + " has " + countLongNumber.calculation(chooseNumber) + " digits");
     }
 
     private void calculateDecimalPart() {
