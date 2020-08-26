@@ -10,7 +10,6 @@ public class Ui {
         //      Text For Command Line Input
         Scanner scanner = new Scanner(System.in);
         do {
-
             System.out.println("Please choose which simple algorithm you want to run:");
             System.out.println("1. Factorial Calculation");
             int choice = Integer.parseInt(scanner.nextLine());
@@ -18,7 +17,10 @@ public class Ui {
                 case 1:
                     System.out.println("Please choose the number that you want calculated");
                     int chooseNumber = Integer.parseInt(scanner.nextLine());
-                    System.out.println(calculateFactorial.calculation(chooseNumber));
+                    if (chooseNumber > 17)
+                        System.out.println("I cannot calculate that high");
+                    else
+                        System.out.println(calculateFactorial.calculation(chooseNumber));
                     break;
                 default:
                     System.out.println("Invalid number. Please choose again.");
@@ -36,6 +38,5 @@ public class Ui {
             return false;
         else
             return true;
-
     }
 }

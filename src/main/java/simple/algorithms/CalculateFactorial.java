@@ -6,7 +6,7 @@ public class CalculateFactorial {
     public CalculateFactorial() {
     }
 
-    public int calculation (int inputNumber)  {
+    public int calculation (int inputNumber) {
         if (inputNumber == 0)
             return 1;
         else {
