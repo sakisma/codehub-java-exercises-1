@@ -2,6 +2,7 @@ package simple.algorithms;
 
 import simple.algorithms.services.CalculateFactorial;
 import simple.algorithms.services.CalculateHarmonicNumber;
+import simple.algorithms.services.CalculatePositiveFloatDecimalPart;
 import simple.algorithms.services.CountLongNumber;
 
 import java.util.Scanner;
@@ -73,7 +74,12 @@ public class Ui {
     }
 
     private void calculateDecimalPart() {
-        System.out.println("Ola gucci");
+        CalculatePositiveFloatDecimalPart calculatePositiveFloatDecimalPart = new CalculatePositiveFloatDecimalPart();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please insert a float number");
+        float chooseNumber = Float.parseFloat(scanner.nextLine());
+        System.out.println("The decimals for " + chooseNumber + " are " + calculatePositiveFloatDecimalPart.calculation(chooseNumber));
     }
 
     //Method that prompts user to rerun the program
