@@ -1,4 +1,4 @@
-package services;
+package arraysCollections.services;
 
 public class SymmetricWordChecker {
 }
