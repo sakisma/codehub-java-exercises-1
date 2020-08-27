@@ -1,9 +1,6 @@
 package arraysCollections;
 
-import arraysCollections.services.DuplicateFind;
-import arraysCollections.services.PrimeNumberList;
-import arraysCollections.services.SortInDescOrder;
-import arraysCollections.services.StackStringReverse;
+import arraysCollections.services.*;
 
 import java.util.Scanner;
 
@@ -20,6 +17,7 @@ public class Ui {
             System.out.println("2. List of duplicates in a list");
             System.out.println("3. List sorted in descending order");
             System.out.println("4. String reverse using stack");
+            System.out.println("5. Symmetric word checker");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -34,12 +32,14 @@ public class Ui {
                 case 4:
                     stringRevWithStack();
                     break;
+                case 5:
+                    inverseStringCheck();
+                    break;
                 default:
                     System.out.println("Invalid Input");
                     break;
             }
         } while (reRun());
-
 
 
     }
@@ -65,6 +65,11 @@ public class Ui {
         System.out.println("Please insert a string of your choice.");
         String initialString = scanner.nextLine();
         System.out.println("You wrote " + initialString + " and the reverse of that is " + stackStringReverse.reverse(initialString));
+    }
+
+    private void inverseStringCheck() {
+        SymmetricWordChecker symmetricWordChecker = new SymmetricWordChecker();
+        System.out.println(symmetricWordChecker.input());
     }
 
     //Method that prompts user to rerun the program
