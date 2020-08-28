@@ -5,27 +5,45 @@ import java.util.ArrayList;
 public class Validator {
 
     public boolean hasOneUppercase(String inputString) {
-        return true;
+        if (!inputString.equals(inputString.toUpperCase()))
+            return true;
+        else
+            return false;
     }
 
     public boolean hasOneLowercase(String inputString) {
-        return true;
+        if (!inputString.equals(inputString.toLowerCase()))
+            return true;
+        else
+            return false;
     }
 
     public boolean hasOneNumber(String inputString) {
-        return true;
+        if (inputString.matches(".*\\d.*"))
+            return true;
+        else
+            return false;
     }
 
     public boolean hasOneSpecialCharacter(String inputString) {
-        return false;
+        if (inputString.matches(".*[!@#$%^&*].*"))
+            return true;
+        else
+            return false;
     }
 
     public boolean isLongEnough(String inputString) {
-        return false;
+        if (inputString.length() >= 8)
+            return true;
+        else
+            return false;
     }
 
     public boolean doesNotContainConsecutiveCharacters(String inputString) {
-        return true;
+        if (!inputString.matches("(?i)(?:([a-z0-9])\\1{2,})*"))
+            return true;
+        else
+            return false;
     }
 
     public int passwordCriteria(String inputString) {
@@ -39,7 +57,7 @@ public class Validator {
         passwordStrength.add(isLongEnough(inputString) ? 1 : 0);
         passwordStrength.add(doesNotContainConsecutiveCharacters(inputString) ? 1 : 0);
 
-        for(Integer index: passwordStrength) {
+        for (Integer index : passwordStrength) {
             if (index == 1) {
                 strength++;
             }

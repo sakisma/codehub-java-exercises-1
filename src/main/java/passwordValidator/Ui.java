@@ -14,8 +14,9 @@ public class Ui {
         } while (reRun());
     }
 
-    private boolean isValid(String inputString) {
+    private String isValid(String inputString) {
         Validator validator = new Validator();
+
         if (validator.passwordCriteria(inputString) > 2 && validator.isLongEnough(inputString)) {
             if ((validator.hasOneNumber(inputString) && validator.doesNotContainConsecutiveCharacters(inputString)) || (validator.hasOneSpecialCharacter(inputString) && validator.doesNotContainConsecutiveCharacters(inputString)))
                 System.out.println("Password OK");
@@ -23,8 +24,9 @@ public class Ui {
                 System.out.println("Strong Password");
             if (validator.passwordCriteria(inputString) == 6)
                 System.out.println("Very Strong password");
+            return "Password is valid";
         } else {
-            System.out.println("Invalid password. The requirements are:\n" +
+            return ("Invalid password. The requirements are:\n" +
                     "1. Password contains at least one uppercase character\n" +
                     "2. Password contains at least one lowercase character\n" +
                     "3. Contains at least one number\n" +
@@ -33,7 +35,6 @@ public class Ui {
                     "6. Cannot contain a sequence of 3 same characters (i.e.\n" +
                     "aaa) or a sequence of 3 consecutive characters (i.e abc)");
         }
-        return true;
     }
 
     private boolean reRun() {
