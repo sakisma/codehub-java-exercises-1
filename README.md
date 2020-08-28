@@ -1,15 +1,8 @@
-# Code.Hub-Pfizer SE Bootcamp
+# Simple Algorithms
 
-This repository is for the codehub software development bootcamp and will contain the first set of exercises that were given
+This exercise implements some single algorithms that can be shown by running the main function
 
+## Other Branches
 
-## Exercise 1
-
-***NOTE: Master branch is the initial branch that was pushed and it is empty.***
-Checkout to an appropriate branch to check the categories of the exercises that were given
-
-## Branches
-
-### simple_algorithms
-### arrays_collections
-### string_class
+**arrays_collections**  
+**password_validator**
