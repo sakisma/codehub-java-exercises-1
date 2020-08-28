@@ -10,6 +10,6 @@ Checkout to an appropriate branch to check the categories of the exercises that 
 
 ## Branches
 
-### simple_algorithms
-### arrays_collections
-### string_class
+**simple_algorithms**  
+**arrays_collections**  
+**password_validator**
