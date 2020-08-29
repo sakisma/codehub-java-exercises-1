@@ -1,5 +1,7 @@
 package simple.algorithms.services;
 
+import java.util.Scanner;
+
 public class CalculateFactorial {
 
     public CalculateFactorial() {
@@ -18,9 +20,18 @@ public class CalculateFactorial {
     }
 
     public boolean isPrimeNumber (int number) {
-        if (number % 2 != 0)
+        boolean flag = false;
+
+        for (int i = 2; i < number / 2; ++i) {
+            if (number % i == 0)
+                flag = true;
+            break;
+        }
+
+        if (!flag)
             return true;
         else
             return false;
     }
+
 }
