@@ -1,7 +1,5 @@
 package simple.algorithms.services;
 
-import java.util.Scanner;
-
 public class CalculateFactorial {
 
     public CalculateFactorial() {
@@ -28,10 +26,7 @@ public class CalculateFactorial {
             break;
         }
 
-        if (!flag)
-            return true;
-        else
-            return false;
+        return !flag;
     }
 
 }
