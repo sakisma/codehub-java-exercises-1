@@ -55,8 +55,8 @@ public class Ui {
     }
 
     private void primeNumber() {
-        PrimeNumberList primeNumberList = new PrimeNumberList();
-        System.out.println(primeNumberList.primaryList());
+        PrimeNumberCheck primeNumberCheck = new PrimeNumberCheck();
+        System.out.println(primeNumberCheck.find());
     }
 
     private void findDuplicatelist() {
