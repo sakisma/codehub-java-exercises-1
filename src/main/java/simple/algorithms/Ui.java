@@ -8,7 +8,6 @@ import simple.algorithms.services.CountLongNumber;
 import java.util.Scanner;
 
 public class Ui {
-    Scanner scanner;
     CalculateFactorial calculateFactorial = new CalculateFactorial();
     CalculateHarmonicNumber calculateHarmonicNumber = new CalculateHarmonicNumber();
     CountLongNumber countLongNumber = new CountLongNumber();
