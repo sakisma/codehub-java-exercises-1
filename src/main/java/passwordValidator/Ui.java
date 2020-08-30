@@ -5,25 +5,32 @@ import passwordValidator.services.Validator;
 import java.util.Scanner;
 
 public class Ui {
+    Scanner scanner = new Scanner(System.in);
+    Validator validator = new Validator();
+
     public void run() {
         do {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Welcome to the password validator. Please insert your password and we'll tell you if it is valid");
+            System.out.println("Welcome to the password validator." +
+                    " Please insert your password and we'll tell you if it is valid");
             String inputString = scanner.nextLine();
             System.out.println(isValid(inputString));
         } while (reRun());
     }
 
     private String isValid(String inputString) {
-        Validator validator = new Validator();
-
+        // Criteria for valid password
         if (validator.passwordCriteria(inputString) > 2 && validator.isLongEnough(inputString)) {
-            if ((validator.hasOneNumber(inputString) && validator.doesNotContainConsecutiveCharacters(inputString)) || (validator.hasOneSpecialCharacter(inputString) && validator.doesNotContainConsecutiveCharacters(inputString)))
+            // Criteria for OK password
+            if ((validator.hasOneNumber(inputString) && validator.doesNotContainConsecutiveCharacters(inputString))
+                    || (validator.hasOneSpecialCharacter(inputString) && validator.doesNotContainConsecutiveCharacters(inputString)))
                 System.out.println("Password OK");
+            // Criteria for strong password
             if (validator.isLongEnough(inputString) && validator.doesNotContainConsecutiveCharacters(inputString))
                 System.out.println("Strong Password");
+            // Criteria for very strong password
             if (validator.passwordCriteria(inputString) == 6)
                 System.out.println("Very Strong password");
+
             return "Password is valid";
         } else {
             return ("Invalid password. The requirements are:\n" +
@@ -39,8 +46,8 @@ public class Ui {
 
     private boolean reRun() {
         System.out.println("Do you want to re-run the program? (Y/n)");
-        Scanner scanner = new Scanner(System.in);
         String response = scanner.nextLine();
+
         return !response.equals("n");
     }
 }

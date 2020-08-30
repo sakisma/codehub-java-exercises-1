@@ -1,6 +1,7 @@
 package passwordValidator.services;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Validator {
     public Validator() {
@@ -31,7 +32,7 @@ public class Validator {
     }
 
     public int passwordCriteria(String inputString) {
-        ArrayList<Integer> passwordStrength = new ArrayList<>();
+        List<Integer> passwordStrength = new ArrayList<>();
         int strength = 0;
 
         passwordStrength.add(hasOneUppercase(inputString) ? 1 : 0);
@@ -49,5 +50,4 @@ public class Validator {
 
         return strength;
     }
-
 }
