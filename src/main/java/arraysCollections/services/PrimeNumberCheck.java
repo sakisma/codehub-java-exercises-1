@@ -1,26 +1,43 @@
 package arraysCollections.services;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+
 public class PrimeNumberCheck {
+    String response;
+
     public PrimeNumberCheck() {
     }
 
-    public String find() {
-        Scanner scanner = new Scanner(System.in);
-        int checkIfNumberPrime = scanner.nextInt();
-        boolean flag = false;
+    public List<Integer> initialList() {
+        List<Integer> exampleList = new ArrayList();
+        do {
+            System.out.println("Add an integer to stack");
+            int integerToAdd = new Scanner(System.in).nextInt();
+            exampleList.add(integerToAdd);
+            System.out.println("Do you want to add another integer?(Y/n)");
+            response = new Scanner(System.in).nextLine();
+        } while (!response.equals("n"));
 
-        System.out.println("Insert a number to check if it is prime");
-        for (int i = 2; i < checkIfNumberPrime / 2; ++i) {
-            if (checkIfNumberPrime % i == 0)
-                flag = true;
-            break;
+        return exampleList;
+    }
+
+    public boolean isPrime(int numberToCheck) {
+        if (numberToCheck % 2 == 0) return false;
+        for (int i = 3; i * i <= numberToCheck; i += 2) {
+            if (numberToCheck % i == 0)
+                return false;
         }
+        return true;
+    }
 
-        if (!flag)
-            return checkIfNumberPrime + " is a prime number.";
-        else
-            return checkIfNumberPrime + " is not a prime number.";
+    public void checkPrime(List<Integer> stackToCheck) {
+        for (int numberToCheck : stackToCheck) {
+            System.out.println(isPrime(numberToCheck));
+        }
     }
 }
+
+

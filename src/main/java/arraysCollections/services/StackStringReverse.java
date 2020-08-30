@@ -3,13 +3,16 @@ package arraysCollections.services;
 import java.util.Stack;
 
 public class StackStringReverse {
+    private final Stack<Character> stack = new Stack<>();
 
-    public static String reverse(String initialString) {
+    public StackStringReverse() {
+    }
+
+    public String reverseString(String initialString) {
         if (initialString == null || initialString.equals("")) {
             return initialString;
         }
 
-        Stack<Character> stack = new Stack<Character>();
         char[] character = initialString.toCharArray();
 
         for (int characterToPush = 0; characterToPush < initialString.length(); characterToPush++) {

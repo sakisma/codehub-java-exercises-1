@@ -3,8 +3,12 @@ package arraysCollections.services;
 import java.util.Scanner;
 
 public class SymmetricWordChecker {
+    private final Scanner scanner = new Scanner(System.in);
+
+    public SymmetricWordChecker() {
+    }
+
     public String input() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Insert the string that you want to test:");
         String inputString = scanner.nextLine();
         StringBuilder reverseString = new StringBuilder(inputString);

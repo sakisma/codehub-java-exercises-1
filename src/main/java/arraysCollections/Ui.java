@@ -2,38 +2,38 @@ package arraysCollections;
 
 import arraysCollections.services.*;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class Ui {
-    Stack exampleStack = new Stack();
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner;
     PrimeNumberCheck primeNumberCheck = new PrimeNumberCheck();
     DuplicateFind duplicateFind = new DuplicateFind();
     SortInDescOrder sortInDescOrder = new SortInDescOrder();
     StackStringReverse stackStringReverse = new StackStringReverse();
     SymmetricWordChecker symmetricWordChecker = new SymmetricWordChecker();
     CustomStackWithMethods customStackWithMethods = new CustomStackWithMethods();
-
+    Stack<Integer> exampleStack = customStackWithMethods.initializeStack();
 
     public Ui() {
     }
 
     public void run() {
-        customStackWithMethods.initializeStack(exampleStack);
+
         do {
             System.out.println("Welcome to arrays and collections exercise. " +
                     "Please choose which program you'd like to run.\n" +
                     "1. List of prime numbers from another list\n" +
                     "2. List of duplicates in a list\n" +
                     "3. List sorted in descending order\n" +
-                    "4. String reverse using stack" +
+                    "4. String reverse using stack\n" +
                     "5. Symmetric word checker\n" +
                     "6. Stack Example");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = new Scanner(System.in).nextInt();
             switch (choice) {
                 case 1:
-                    primeNumber();
+                    primeNumber(primeNumberCheck.initialList());
                     break;
                 case 2:
                     findDuplicateList();
@@ -48,7 +48,7 @@ public class Ui {
                     inverseStringCheck();
                     break;
                 case 6:
-                    stackImplementation(exampleStack);
+                    stackImplementation();
                     break;
                 default:
                     System.out.println("Invalid Input");
@@ -57,8 +57,8 @@ public class Ui {
         } while (reRun());
     }
 
-    private void primeNumber() {
-        System.out.println(this.primeNumberCheck.find());
+    private void primeNumber(List<Integer> exampleList) {
+       primeNumberCheck.checkPrime(exampleList);
     }
 
     private void findDuplicateList() {
@@ -66,21 +66,21 @@ public class Ui {
     }
 
     private void descSortList() {
-        System.out.println(sortInDescOrder.sorter());
+       sortInDescOrder.sorter();
     }
 
     private void stringRevWithStack() {
         System.out.println("Please insert a string of your choice.");
-        String initialString = scanner.nextLine();
+        String initialString = new Scanner(System.in).nextLine();
         System.out.println("You wrote " + initialString + " and the reverse of that is "
-                + stackStringReverse.reverse(initialString));
+                + stackStringReverse.reverseString(initialString));
     }
 
     private void inverseStringCheck() {
         System.out.println(symmetricWordChecker.input());
     }
 
-    private void stackImplementation(Stack exampleStack) {
+    private void stackImplementation() {
         System.out.println("Welcome to stack example. I will initialize the example stack with 10 random integers." +
                 "\nYou may select which out of 3 main functions you want to run.\n" +
                 "Current selections are:\n" +
@@ -88,7 +88,7 @@ public class Ui {
                 "2: Pop from stack.\n" +
                 "3: Peek at stack.\n" +
                 "4: Show the entire stack.");
-        int choice = scanner.nextInt();
+        int choice = new Scanner(System.in).nextInt();
 
         switch (choice) {
             case 1:
@@ -112,7 +112,7 @@ public class Ui {
     //Method that prompts user to rerun the program
     private boolean reRun() {
         System.out.println("Do you want to re-run the program? (Y/n)");
-        String response = scanner.nextLine();
+        String response = new Scanner(System.in).nextLine();
 
         return !response.equals("n");
     }
