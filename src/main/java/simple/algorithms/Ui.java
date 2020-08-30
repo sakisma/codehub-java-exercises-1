@@ -8,7 +8,7 @@ import simple.algorithms.services.CountLongNumber;
 import java.util.Scanner;
 
 public class Ui {
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner;
     CalculateFactorial calculateFactorial = new CalculateFactorial();
     CalculateHarmonicNumber calculateHarmonicNumber = new CalculateHarmonicNumber();
     CountLongNumber countLongNumber = new CountLongNumber();
@@ -21,7 +21,7 @@ public class Ui {
                     "2. Harmonic number calculation\n" +
                     "3. Count digits for a long number\n" +
                     "4. Print decimal part for a positive float number\n");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = new Scanner(System.in).nextInt();
             switch (choice) {
                 case 1:
                     factorial();
@@ -45,7 +45,7 @@ public class Ui {
     // Method that outputs the UI of the factorial calculation
     private void factorial() {
         System.out.println("Please choose the number that you want calculated");
-        int chooseNumber = Integer.parseInt(scanner.nextLine());
+        int chooseNumber = new Scanner(System.in).nextInt();
 
         // Check for integer overflow on user input
 
@@ -61,7 +61,7 @@ public class Ui {
 
     private void harmonicCalculation() {
         System.out.println("Please choose the number that you want calculated");
-        int chooseNumber = scanner.nextInt();
+        int chooseNumber = new Scanner(System.in).nextInt();
         if (chooseNumber > 0)
             System.out.println("The harmonic number of " + chooseNumber + " is "
                     + calculateHarmonicNumber.calculation(chooseNumber));
@@ -71,14 +71,14 @@ public class Ui {
 
     private void countLongNumber() {
         System.out.println("Please insert a long number.");
-        long chooseNumber = Long.parseLong(scanner.nextLine());
+        long chooseNumber = new Scanner(System.in).nextLong();
         System.out.println("The number " + chooseNumber + " has "
                 + countLongNumber.calculation(chooseNumber) + " digits");
     }
 
     private void calculateDecimalPart() {
         System.out.println("Please insert a float number");
-        float chooseNumber = Float.parseFloat(scanner.nextLine());
+        float chooseNumber = new Scanner(System.in).nextFloat();
         System.out.println("The decimals for " + chooseNumber
                 + " are " + calculatePositiveFloatDecimalPart.calculation(chooseNumber));
     }
@@ -86,7 +86,8 @@ public class Ui {
     //Method that prompts user to rerun the program
     private boolean reRun() {
         System.out.println("Do you want to re-run the program? (Y/n)");
-        String response = scanner.nextLine();
+        String response = new Scanner(System.in).nextLine();
+
         return !response.equals("n");
     }
 }
