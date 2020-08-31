@@ -9,7 +9,7 @@ public class CustomStackWithMethods {
     private final Scanner scanner = new Scanner(System.in);
 
     public Stack<Integer> initializeStack() {
-        Stack<Integer> stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
         for(int i = 0; i < 10; i++) {
             stack.push(random.nextInt(10));
         }
