@@ -12,7 +12,7 @@ public class PrimeNumberCheck {
     }
 
     public List<Integer> initialList() {
-        List<Integer> exampleList = new ArrayList();
+        List<Integer> exampleList = new ArrayList<>();
         do {
             System.out.println("Add an integer to stack");
             int integerToAdd = new Scanner(System.in).nextInt();
@@ -28,6 +28,7 @@ public class PrimeNumberCheck {
         for (int i = 2; i < (int)Math.sqrt(numberToCheck); i++)
             if (numberToCheck % i == 0)
                 return false;
+
         return true;
     }
 
