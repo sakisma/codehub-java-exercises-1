@@ -24,7 +24,7 @@ public class Ui {
         do {
             System.out.println("Welcome to arrays and collections exercise. " +
                     "Please choose which program you'd like to run.\n" +
-                    "1. List of prime numbers from another list\n" +
+                    "1. Find prime numbers from a given list\n" +
                     "2. List of duplicates in a list\n" +
                     "3. List sorted in descending order\n" +
                     "4. String reverse using stack\n" +

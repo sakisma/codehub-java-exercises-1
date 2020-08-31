@@ -25,11 +25,9 @@ public class PrimeNumberCheck {
     }
 
     public boolean isPrime(int numberToCheck) {
-        if (numberToCheck % 2 == 0) return false;
-        for (int i = 3; i * i <= numberToCheck; i += 2) {
+        for (int i = 2; i < (int)Math.sqrt(numberToCheck); i++)
             if (numberToCheck % i == 0)
                 return false;
-        }
         return true;
     }
 
