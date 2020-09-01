@@ -8,8 +8,8 @@ public class CustomStackWithMethods {
     private final Random random = new Random();
     private final Scanner scanner = new Scanner(System.in);
 
-    public Stack<Integer> initializeStack() {
-        Stack<Integer> stack = new Stack<>();
+    public Stack<T> initializeStack() {
+        Stack<T> stack = new Stack<>();
         for(int i = 0; i < 10; i++) {
             stack.push(random.nextInt(10));
         }
